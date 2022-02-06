@@ -1,2 +1,2 @@
-ffmpeg should be downloaded by yourself.
+ffmpeg should be downloaded by yourself.\n
 Downloader from Qerogram.
