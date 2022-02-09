@@ -33,9 +33,6 @@ def downloadwithcd(url):
                 isfind=data.find('ytInitialPlayerResponse')
                 data=data[isfind:]
                 time.sleep(0.5)
-            f=open('eee.txt','w',encoding='utf-8')
-            f.write(data)
-            f.close()
             data=data[data.find('\"url\"'):]
             data=data[:data.find('\"',10)]
             return json.loads('{'+data+'\"}')
