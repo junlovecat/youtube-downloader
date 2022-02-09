@@ -1,2 +1,3 @@
-ffmpeg should be downloaded by yourself.</br>
-Downloader from Qerogram.
+ffmpeg will be downloaded itself.</br>
+downloadwithcd from Qerogram.</br>
+Please delete temp file by yourself.
