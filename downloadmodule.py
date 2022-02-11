@@ -1,4 +1,8 @@
-import pytube,moviepy.editor
+import os
+try:import pytube,moviepy.editor
+except:
+    os.system('pip install pytube moviepy')
+    import pytube,moviepy.editor
 def downloadmodule(yt:pytube.YouTube=None,link:str=None):
     try:
         if yt:
@@ -11,7 +15,7 @@ def downloadmodule(yt:pytube.YouTube=None,link:str=None):
             video.audio.write_audiofile(f"{ti}.mp3")
         elif link:
             yt=pytube.YouTube(link)
-            v=yt.streams.get_highest_resolution()
+            v=yt.streams.get_audio_only()
             v.download()
             ti=yt.title
             lstriplist=['~','#','$','%','^','*','\\','|',';',"'",':','"',',','.','/','?']

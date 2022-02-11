@@ -10,8 +10,7 @@ except:
 def main():
     try:
         raw_link=''
-        try:
-            a=str(input('노래 제목,링크 또는 exit을 입력해주세요: '))
+        try:a=str(input('노래 제목,링크 또는 exit을 입력해주세요: '))
         except KeyboardInterrupt:exit()
         if a.lower()=='exit':sys.exit()
         if 'youtu.be' in a or 'youtube.com' in a:yt=pytube.YouTube(a);raw_link=a

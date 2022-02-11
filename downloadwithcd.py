@@ -47,9 +47,7 @@ def downloadwithcd(url):
             tempvideo.write(res.content)
             tempvideo.close()
             return filename
-        def converter(old,new):
-            clip=moviepy.editor.VideoFileClip(old)
-            clip.audio.write_audiofile(f'{new}.mp3')
+        def converter(old,new):moviepy.editor.VideoFileClip(old).audio.write_audiofile(f'{new}.mp3')
         autodownload()
         yt=pytube.YouTube(url)
         ti=yt.title
@@ -62,5 +60,7 @@ def downloadwithcd(url):
         data_url=data['url'].replace('mime=video/mp4','mime=audio/webm')
         webmfilename=downloadfile(data_url)
         converter(webmfilename,mp4filename)
+        os.system(f'del /f {webmfilename}')
     except:return False
     return True
+downloadwithcd('https://www.youtube.com/watch?v=TxhiMXVe3fc')
